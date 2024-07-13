@@ -12,7 +12,7 @@ router.post('/api/v1/task',async (req,res)=>{
         const response = await axios.post(`${TODO_SERVICE_URL}/task`,req.body);
         res.json(response.data);
     }catch(error){
-        res.status(5000).send(error.message);
+        res.status(500).send(error.message);
     }
 });
 

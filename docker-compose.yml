@@ -3,15 +3,21 @@ version: '3.8'
 services:
   api-gateway: 
     image: codebd/api-gateway:v0.0.2
+    environment:
+      TODO_SERVICE_URL: http://todo-service:3000
     ports:
       - '5000:3000'
+
   redis:
     image: 'redis/redis-stack:latest'
     ports:
       - '6379:6379'
       - '8001:8001'
   todo-service: 
-    image: codebd/todo-service:v0.02
+    image: codebd/todo-service:v0.0.2
+    environment:
+      REDIS_URL: redis://redis:6379
+
     # depends-on:
     #   - redis
     # ports:
