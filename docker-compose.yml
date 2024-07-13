@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   api-gateway: 
-    image: codebd/api-gateway:v0.01
+    image: codebd/api-gateway:v0.0.2
     ports:
       - '5000:3000'
   redis:
@@ -10,3 +10,9 @@ services:
     ports:
       - '6379:6379'
       - '8001:8001'
+  todo-service: 
+    image: codebd/todo-service:v0.02
+    # depends-on:
+    #   - redis
+    # ports:
+    #   - '5000:3000'
