@@ -6,7 +6,7 @@ on:
       - master
 
 jobs: 
-  build:
+  apigw-build-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,7 @@ jobs:
         run: |
           cd api-gateway
           make build
-          # docker build -t api-gateway:v1.0.0 .
+
 
       - name: Docker Login
         run: |
@@ -28,11 +28,27 @@ jobs:
         run: |
           cd api-gateway
           make push
-          
+
   
-  # push: 
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout Repository
-  #       uses: actions/checkout@v2
+  todo-build-push: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Docker Build
+        run: |
+          cd api-gateway
+          make build
+
+
+      - name: Docker Login
+        run: |
+          cd api-gateway
+          make login
+
+      - name: Docker Push
+        run: |
+          cd api-gateway
+          make push
 
