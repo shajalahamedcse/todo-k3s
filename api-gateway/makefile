@@ -13,3 +13,6 @@ run:
 rm:
 	@ docker stop ${CONTAINER_NAME}
 	@ docker rm ${CONTAINER_NAME}
+
+login:
+	@ echo "Docker Login"

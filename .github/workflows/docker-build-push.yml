@@ -18,3 +18,15 @@ jobs:
           cd api-gateway
           make build
           # docker build -t api-gateway:v1.0.0 .
+
+      - name: Docker Login
+        run: |
+          cd api-gateway
+          make login
+  
+  push: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
