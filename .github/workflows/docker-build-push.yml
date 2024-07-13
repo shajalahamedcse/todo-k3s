@@ -16,4 +16,5 @@ jobs:
       - name: Docker Build
         run: |
           cd api-gateway
-          docker build -t api-gateway:v1.0.0 .
+          make build
+          # docker build -t api-gateway:v1.0.0 .
