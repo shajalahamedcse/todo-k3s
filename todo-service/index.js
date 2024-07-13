@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const routes = require('./routes');
+const todocontroller = require('./todocontroller')
 
 dotenv.config();
 
@@ -9,8 +9,9 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 
-app.use('/',routes);
+app.post('/task',todocontroller.addTask);
+
 
 app.listen(port,()=>{
-    console.log(`API Gatway is running at port: ${port}`)
+    console.log(`Todo service is running at port: ${port}`)
 })

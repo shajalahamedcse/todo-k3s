@@ -1,0 +1,1 @@
+curl -X POST http://localhost:5001/task -H "Content-Type: application/json" -d '{"task": "Sample Task 1"}'
