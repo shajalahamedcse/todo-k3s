@@ -9,11 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
     
-    - name: Docker Build
-      run: |
-        apt update -y
-        apt install make docker.io -y
+      - name: Docker Build
+        run: |
+          apt update -y
+          apt install make docker.io -y
